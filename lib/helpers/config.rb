@@ -9,4 +9,9 @@ module Conf
     end
     return list
   end
+
+  def self.site(site)
+    return @config["config"]["sites"][site]
+  end
+
 end
