@@ -1,0 +1,12 @@
+config: {
+  defaults: {
+    user: "nobody",
+    sites_root: "/var/www/"
+  },
+  sites: {
+    foobar: {
+      dns: ["foo.com", "bar.com"],
+      email: "foo@bar"
+    }
+  }
+}
