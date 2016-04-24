@@ -1,3 +1,2 @@
-require "helpers/log"
-require "helpers/config"
-require "helpers/sort"
+require "helpers/helpers"
+require "runners/command"
