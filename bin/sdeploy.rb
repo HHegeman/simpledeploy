@@ -12,8 +12,16 @@ OptionParser.new do |opts|
   opts.on("-l", "--list", "gives a list of all configured sites.") do |ext|
     @options[:list] = ext
   end
+  opts.on("-v", "--verbose", "output logging.") do |ext|
+    @options[:verbose] = ext
+  end
 end.parse!
+
+Log.verbose(@options[:verbose])
+
 if @options[:list]
   puts "The following websites are configured:"
   puts Conf.sitelist
 end
+
+puts Log.getlog
