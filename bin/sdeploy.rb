@@ -25,6 +25,7 @@ Log.verbose(@options[:verbose])
 if @options[:list]
   puts "The following websites are configured:"
   puts Conf.sitelist
+  exit 0
 end
 
 # check if given options with -s are actually posible else raise error.
