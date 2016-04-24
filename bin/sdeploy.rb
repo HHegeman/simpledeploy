@@ -9,6 +9,9 @@ OptionParser.new do |opts|
     puts opts
     exit
   end
+  opts.on("-s ", "--sites", "Specify which sites should be done. (for more sites use , seperated list.) ") do |ext|
+    @options[:sites] = ext
+  end
   opts.on("-l", "--list", "gives a list of all configured sites.") do |ext|
     @options[:list] = ext
   end
@@ -24,4 +27,6 @@ if @options[:list]
   puts Conf.sitelist
 end
 
+# check if given options with -s are actually posible else raise error.
+Sort.input(Conf.sitelist, @options[:sites])
 puts Log.getlog
