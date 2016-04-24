@@ -12,6 +12,7 @@ module Log
     @logged << text
     puts "output: #{text}" if @verbose
     puts "ERROR: #{text}"
+    exit 1
   end
 
   def self.getlog
