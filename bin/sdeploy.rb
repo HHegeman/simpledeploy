@@ -9,4 +9,11 @@ OptionParser.new do |opts|
     puts opts
     exit
   end
+  opts.on("-l", "--list", "gives a list of all configured sites.") do |ext|
+    @options[:list] = ext
+  end
 end.parse!
+if @options[:list]
+  puts "The following websites are configured:"
+  puts Conf.sitelist
+end
